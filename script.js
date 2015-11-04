@@ -1,4 +1,5 @@
 var btn = document.getElementById('run');
+var clearBtn = document.getElementById('clear');
 var axiom = document.getElementById('axiom');
 var textarea = document.getElementById('productions');
 var depth = document.getElementById('depth');
@@ -7,7 +8,8 @@ var productionsArray = [];
 var sequence = '';
 var result = '';
 var ignore = '[]+-';
-var ctx = document.getElementById('canvas').getContext('2d');
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
 var originX = document.getElementById('originX');
 var originY = document.getElementById('originY');
 var step = document.getElementById('length');
@@ -93,4 +95,9 @@ btn.addEventListener('click', function(evt) {
                 break;
         }
     }
+});
+
+clearBtn.addEventListener('click', function(evt) {
+    evt.preventDefault();
+    ctx.clearRect(0,0,canvas.width,canvas.height);
 });
